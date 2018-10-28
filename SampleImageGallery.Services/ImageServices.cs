@@ -16,12 +16,13 @@ namespace SampleImageGallery.Services
         }
         public IEnumerable<GallaryImage> GetAll()
         {
-            return _ctx.GallaryImages.Include(img => img.Tags);
+            return _ctx.GallaryImages
+                  .Include(img => img.Tags);
         }
 
         public GallaryImage GetById(int id)
         {
-            return _ctx.GallaryImages.Find(id);
+            return GetAll().Where(img => img.Id == id).First();
         }
 
         public IEnumerable<GallaryImage> GetWithTag(string tag)

@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SampleImageGallary;
+using SampleImageGallery.Services;
 
 namespace ImageGallery
 {
@@ -25,6 +26,8 @@ namespace ImageGallery
         {
             //add condigure 'ConnectionString'
             services.AddDbContext<SampleImageGallaryDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultDatabase")));
+
+            services.AddScoped<IImage, ImageServices>();
 
             services.AddMvc();
         }

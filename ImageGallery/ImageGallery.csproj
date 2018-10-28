@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SampleImageGallary\SampleImageGallary.csproj" />
+    <ProjectReference Include="..\SampleImageGallery.Services\SampleImageGallery.Services.csproj" />
   </ItemGroup>
 
 </Project>

@@ -26,7 +26,7 @@ namespace ImageGallery
         {
             //add condigure 'ConnectionString'
             services.AddDbContext<SampleImageGallaryDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultDatabase")));
-
+            //connect interface with class
             services.AddScoped<IImage, ImageServices>();
 
             services.AddMvc();
